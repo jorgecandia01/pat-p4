@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Telefónica - Sostenibilidad e innovación</title>
+
+    <meta charset="utf-8">
+    <!meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="./script.js"></script>
+
+    <style>
+.Pic:hover{
+filter: brightness(85%);
+}
+.Pic{
+filter: brightness(30%);
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <!nav class="navbar navbar-expand-md bg-white mb-4 py-3">
+    <div class="container-fluid  px-5 mb-4 py-3 d-flex justify-content-center">
+        <div class="row">
+            <div class="col-2  ">
+                <a class="navbar-brand " href="index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Telef%C3%B3nica_2021_logo.svg" width="90%" height="90%"></a>
+            </div>
+
+            <div class="col-10 text-dark">
+                <div class="row">
+                    <div class="row d-flex justify-content-right">
+                        <div class="col-7"><p></p></div>
+                        <div class="col-3 d-flex justify-content-end fw-light"><p id="acciones">-</p></div>
+
+                        <div class="col-1 ps-4 ms-5 d-flex align-content-right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./imagenes/img-search.png" width="30" height="30"></div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-1 d-flex justify-content-center"><a style="color:#000000" href="nosotros.html" class="text-decoration-none small">&nbsp;NOSOTROS&nbsp;</a></div>
+                        <div class="col-3 d-flex justify-content-center"><a style="color:#000000"href="sostenibilidad-innovacion.html" class="text-decoration-none small">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SOSTENIBILIDAD E INNNOVACIÓN</a></div>
+                        <div class="col-1 d-flex justify-content-center "><a style="color:#000000"href="404" class="text-decoration-none small">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SERVICIOS</a></div>
+                        <div class="col-3 d-flex justify-content-center "><a style="color:#000000"href="404" class="text-decoration-none small">&nbsp;&nbsp;&nbsp;&nbsp;SALA DE COMUNICACIÓN</a></div>
+                        <div class="col-1 d-flex me-2"><a style="color:#000000"href="404" class="text-decoration-none small">INVERSORES</a></div>
+                        <div class="col-1 d-flex me-4 justify-content-left "><a style="color:#000000"href="404" class="text-decoration-none small">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TALENTO</a></div>
+                        <div class="col-1 d-flex ps-5 ms-3 justify-content-left "><a style="color:#000000"href="404" class="text-decoration-none small"><img src="./imagenes/img-menu.png" width="30" height="30"></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!/nav>
+</header>
+
+
+<main class="mx-5 px-1">
+
+    <div id="boton-inicio" class="mt-4 mx-3" style="font-family:arial">
+        <img class="ms-5 me-3" src="https://cdn-icons-png.flaticon.com/512/57/57013.png" width="2%" height="2%">
+        <a href="index.html"><button type="button" class="btn btn-light text-primary">Inicio</button></a>
+    </div>
+
+    <div class="" id="Primer-artículo">
+        <h1 class="card-title px-5 mx-2 mt-4" style="font-family:arial; font-size:50px">Sostenibilidad e innovación</h1>
+        <div class="container pb-3 mb-5 px-5">
+            <a href="404">
+                <div class="card-fluid bg-light text-success">
+                    <!img class="Pic" src="https://www.telefonica.com/es/wp-content/uploads/sites/4/2021/08/compromiso-pallete.jpg" class="card-img">
+                    <img class="card-img Pic" src="https://www.telefonica.com/es/wp-content/uploads/sites/4/2021/08/compromiso-pallete.jpg" width="100%" height="10%">
+                    <div class="carousel-caption fs-4">
+                        <p class="d-flex justify-content-start mb-3" style="font-family:arial; font-size:60px">Cómo trabajamos</p>
+                        <p class="d-flex justify-content-start" style="font-family:arial; text-align:left">La sostenibilidad empieza en nosotros mismos. El mantra para ser una empresa en la que confiar: integridad, compromiso y transparencia</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+
+</main>
+
+<script>
+let programa = async() =>{
+    let datos = await llamarApi()
+
+    let precio = datos[0].toString().slice(0,4);
+    let cambioNominal = datos[1].toString().slice(0,5);
+    let cambioReal = datos[2].toString().slice(0,5);
+
+    let pAcciones = $("#acciones");
+    pAcciones.html("      " + precio + "$&nbsp;&nbsp;//&nbsp;&nbsp;" + cambioNominal + "$ (" + cambioReal + "%)");
+    }
+
+programa();
+
+</script>
+
+</body>
+</html>
