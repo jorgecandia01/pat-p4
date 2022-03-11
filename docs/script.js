@@ -2,7 +2,7 @@ let llamarApi = async() => {
 
     let address = "https://yfapi.net/v6/finance/quote?region=US&lang=en&symbols=TEF"
     let headers = {
-                    'X-API-KEY' : 'rr535PpbOd37DpvDL3ayC2iJDP8PKqMy5vqRyXaS',
+                    'X-API-KEY' : 'm1hrmjB21t4IDahCNN4uX2OLwCweSOWqakhXMf1E',
                    'accept' : 'application/json'
                    };
 //SuhniClec19oFxE47MC2b8WtYWJu4Pm8a817Hl3n
